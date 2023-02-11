@@ -1,0 +1,17 @@
+// Home
+GET http://127.0.0.1:3000
+
+###
+// auth
+GET http://127.0.0.1:3000/api/auth
+
+###
+
+GET http://127.0.0.1:3000/api/user
+# version=10
+
+###
+GET http://127.0.0.1:8080/user
+
+###
+POST http://127.0.0.1:8080/user

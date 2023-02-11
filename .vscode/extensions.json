@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "christian-kohler.path-intellisense",
+        "formulahendry.auto-rename-tag",
+        "formulahendry.auto-close-tag",
+        "humao.rest-client"
+    ]
+}

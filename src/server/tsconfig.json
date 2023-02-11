@@ -1,0 +1,36 @@
+{
+	"compilerOptions": {
+		"resolveJsonModule": true, // 需要导入json文件
+		"removeComments": true, // 删除注释
+		"emitDecoratorMetadata": true, // 对装饰器使用元数据 需要 reflect-metadata 库支持
+		"experimentalDecorators": true, // 开启装饰器
+		"allowSyntheticDefaultImports": true, // 合成默认导出
+		"allowJs": true, // 支持使用js
+		// 开启严格模式会因为装饰器的类型问题导致不可用
+		// "strict": true, // 严格模式
+		// "incremental": true, // 增量更新
+		"skipLibCheck": true, // 跳过声明文件的类型检查。
+		"strictNullChecks": false, // 保证一个变量或常量的存在
+		"noImplicitAny": false, // 为具有隐含 any 类型的表达式和声明启用错误报告。
+		"strictBindCallApply": false, // 检查绑定、调用和应用方法的参数是否与原始函数匹配。
+		"forceConsistentCasingInFileNames": false, // 确保进口中的大小写正确。
+		"noFallthroughCasesInSwitch": false, // 为 switch 语句中的故障案例启用错误报告。
+		"isolatedModules": false, // 确保每个文件都可以安全地转译，而无需依赖其他导入
+		"esModuleInterop": true, // 发出额外的 JavaScript 以简化对导入 CommonJS 模块的支持。这将启用 allowSyntheticDefaultImports 以实现类型兼容性。
+		"moduleResolution": "node", // 指定 TypeScript 如何从给定的模块说明符中查找文件。
+		// 适配qwik的ssr配置
+		"target": "ESNext", // 编译版本
+		"module": "ESNext", // 生成形式
+		"noEmit": true, // 不输出打包文件
+		"lib": ["ESNext", "DOM", "WebWorker", "DOM.Iterable"], // 编译器使用的库
+		"jsx": "react-jsx", // jsx 编译类型
+		"jsxImportSource": "@builder.io/qwik", // 指定用于导入 JSX 工厂函数时使用的模块说明符
+		"types": ["node", "vite/client"], // 指定要包括在源文件中而不引用的类型包名称。
+		"paths": {
+			// 指定一组将导入重新映射到其他查找位置的条目。
+			"~/*": ["./"]
+		}
+	},
+	"include": ["./"],
+	"exclude": ["node_modules", "test", "dist"]
+}
