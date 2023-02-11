@@ -12,7 +12,6 @@ import compression from 'compression';
 import { join } from 'path/win32';
 import { routes } from './routes';
 import { getRoutes } from './tools/router';
-import { ConnectDB } from './database';
 import { Progress } from './tools/progress';
 
 const bootstarp = async () => {
@@ -34,8 +33,6 @@ const bootstarp = async () => {
 	// 挂载qwik的路由中间件
 	app.use(router);
 
-	// 连接数据库
-	await ConnectDB();
 	// 服务器本身的api服务
 	app.use(express.json());
 	app.use(express.urlencoded({ extended: true }));
