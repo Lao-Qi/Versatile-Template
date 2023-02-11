@@ -26,7 +26,7 @@ function App() {
 				</div>
 			</div>
 			<p className="read-the-docs">感谢你使用此模板</p>
-			<p>仓库地址: <a href=""></a></p>
+			<p>仓库地址: <a href="https://github.com/Lao-Qi/Versatile-Template">Lao-Qi/Versatile-Template</a></p>
 			<p>感谢你为这个项目点个<code>Start</code>，虽然你还没点，但我是绝对不会去提醒你的 (doge header</p>
 		</div>
 	);
