@@ -1,6 +1,5 @@
-import { Get, Middleware } from '../../tools/descriptors';
+import { Get, UseBefore, QueryParam } from 'routing-controllers';
 import { UserService } from './service';
-import type { RequestHandler } from 'express';
 
 export class UserController {
 	constructor(private readonly userService: UserService) {
@@ -9,13 +8,11 @@ export class UserController {
 	}
 
 	@Get()
-	@Middleware(async (req, res, next) => {
+	@UseBefore(async (req, res, next) => {
 		console.log(req.path);
 		next();
 	})
-	find: RequestHandler = function (req, res) {
-		console.log(this.userService);
-		const uid = req.query['uid'];
-		return this.userService.find(String(uid));
-	};
+	find(@QueryParam('uid') uid: number) {
+		return this.userService.find(uid);
+	}
 }

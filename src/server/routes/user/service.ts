@@ -1,7 +1,7 @@
 export class UserService {
 	constructor() {}
 
-	find(uid: string) {
+	find(uid: number) {
 		return `get user ${uid} ok`;
 	}
 }

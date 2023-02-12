@@ -1,21 +1,10 @@
-import { RoutesType } from '../types/router';
+import { RoutingControllersOptions } from 'routing-controllers';
 import { UserController } from './user';
 import { HomeController } from './home';
 
-const routes: RoutesType = [
-	{
-		path: '/',
-		controller: HomeController,
-	},
-	{
-		path: '/api',
-		childrens: [
-			{
-				path: '/user',
-				controller: UserController,
-			},
-		],
-	},
-];
+const ControllersConfig: RoutingControllersOptions = {
+	classTransformer: true,
+	controllers: [HomeController, UserController],
+};
 
-export { routes };
+export { ControllersConfig };

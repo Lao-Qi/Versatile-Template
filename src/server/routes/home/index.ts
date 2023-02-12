@@ -1,28 +1,17 @@
-import { readFile } from 'fs/promises';
+import { readFileSync } from 'fs';
 import { join } from 'path';
-import { Get } from '../../tools/descriptors';
-import type { RequestHandler } from '../../types/descriptors';
+import { Controller, Get, ContentType } from 'routing-controllers';
 
-/** 叫成Controller也许是更合理一点(原本叫HomeRouter) */
+@Controller()
 export class HomeController {
 	@Get('/')
-	main: RequestHandler = async function (req, res) {
-		const data = await readFile(join(global.__client, '/index.html'), 'utf-8');
-		res.setHeader('content-type', 'text/html');
-		res.send(data);
-	};
+	main() {
+		return readFileSync(join(global.__dirname, '../client/index.html'), 'utf-8');
+	}
 
 	@Get('/favicon.ico')
-	icon: RequestHandler = async function (req, res) {
-		const data = await readFile(join(global.__client, './favicon.ico'), 'utf-8');
-		res.setHeader('content-type', 'image/x-icon');
-		res.send(data);
-	};
-
-	@Get('/react.svg')
-	react: RequestHandler = async function (req, res) {
-		const data = await readFile(join(global.__client, './react.svg'), 'utf-8');
-		res.setHeader('content-type', 'image/svg+xml');
-		res.send(data);
-	};
+	@ContentType('image/x-icon')
+	icon() {
+		return readFileSync(join(global.__dirname, '../client/favicon.ico'), 'utf-8');
+	}
 }

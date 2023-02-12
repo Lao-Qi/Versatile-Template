@@ -5,6 +5,14 @@ import baseConfig from '../ssr/vite.config';
 export default extendConfig(baseConfig, () => {
 	return {
 		root: './src/ssr',
+		esbuild: {
+			banner: `(() => {
+				global.__filename = import.meta.url.replace('file:///', '');
+				let ___demo___ = __filename.split('/')
+				___demo___.pop();
+				global.__dirname = ___demo___.join('/')
+			})();`,
+		},
 		build: {
 			ssr: true,
 			rollupOptions: {
