@@ -20,7 +20,7 @@
 
 ## Description
 
-This template covers: `"Single-page app"` and `"Server Render app"`，The server uses Express，And implemented a Nest.js like decorator feature for Express's routing controller, only implementing property decorators.
+This template covers: `"Single-page app"` and `"Server Render app"`，The server uses Express，`routing-controllers` were introduced to implement decorator functionality like Nest.js.
 
 The three services are compressed by Vite when packaging, and you can freely eliminate a service, for example, if you only want to develop a "server rendering application", you can delete the client folder directly, delete the corresponding dependencies in the package.json file, and then delete the corresponding routes from the server.
 
