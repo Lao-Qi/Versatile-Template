@@ -22,11 +22,15 @@
 	"dependencies": {
 		"@builder.io/qwik": "0.17.5",
 		"@builder.io/qwik-city": "0.1.0",
+		"class-transformer": "^0.5.1",
+		"class-validator": "^0.14.0",
 		"compression": "^1.7.4",
+		"dotenv-defaults": "^5.0.2",
 		"express": "^4.18.2",
 		"mysql2": "^3.1.0",
 		"node-fetch": "3.3.0",
 		"reflect-metadata": "^0.1.13",
+		"routing-controllers": "^0.10.1",
 		"rxjs": "^7.2.0",
 		"undici": "5.18.0",
 		"vite-tsconfig-paths": "3.5.0"
