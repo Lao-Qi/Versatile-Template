@@ -55,8 +55,3 @@ dist-ssr
 
 src/server/test/*
 !src/server/test/*.http
-
-database
-entity
-tools/descriptors
-tools/router
