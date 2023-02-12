@@ -58,3 +58,5 @@ src/server/test/*
 
 database
 entity
+tools/descriptors
+tools/router
