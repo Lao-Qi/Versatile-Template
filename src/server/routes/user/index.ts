@@ -1,9 +1,11 @@
-import { Get, UseBefore, QueryParam } from 'routing-controllers';
+import { Controller, Get, UseBefore, QueryParam } from 'routing-controllers';
 import { UserService } from './service';
 
+@Controller('/api/user')
 export class UserController {
-	constructor(private readonly userService: UserService) {
-		// 你还需要手动的实例你要加载的服务
+	private readonly userService: UserService;
+	constructor() {
+		// 你需要手动的实例你要加载的服务
 		this.userService = new UserService();
 	}
 
